@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Virtual Tour Guide</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            text-align: center;
+            padding: 70px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 35px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 25px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+    <script>
+        function redirectToLink() {
+            var dropdown = document.getElementById("dropdown");
+            var selectedOption = dropdown.options[dropdown.selectedIndex].value;
+            var link;
+
+            // Assign the appropriate link based on the selected option
+            switch (selectedOption) {
+                case "option1":
+                    link = "https://adobeaero.app.link/SD3imUK8bFb";
+                    break;
+                case "option2":
+                    link = "https://adobeaero.app.link/un5KzmnncFb";
+                    break;
+                case "option3":
+                    link = "https://adobeaero.app.link/MXX5cEkncFb";
+                    break;
+                case "option4":
+                    link = "https://example.com/link4";
+                    break;
+                default:
+                    link = "https://example.com/default";
+            }
+            window.location.href = link;
+        }
+    </script>
+</head>
+<body>
+
+<form onsubmit="event.preventDefault(); redirectToLink();">
+    <label for="dropdown">Select an option:</label>
+    <select id="dropdown" name="dropdown">
+        <option value="option1">Start</option>
+        <option value="option2">Golconda fort</option>
+        <option value="option3">Mahakali temple</option>
+        <option value="option4">Majid</option>
+    </select>
+
+    <br>
+
+    <input type="submit" value="Go">
+</form>
+
+</body>
+</html>
